@@ -22,16 +22,23 @@ $('.ask-btn').click(() => {
 })
 
 function generateNumbers(num) {
-    const randomNum1 = Math.floor(Math.random() * 6) - 3
-    const randomNum2 = Math.floor(Math.random() * 6) - 3
-    return [num + randomNum1, num + randomNum2]
+    let random1, random2
+    while (true) {
+        random1 = (Math.floor(Math.random() * 8) - 4) + num
+        random2 = (Math.floor(Math.random() * 8) - 4) + num
+        if (!(random1 == random2) && !(num == random1) && !(num == random2)) {
+            break
+        }
+    }
+    return [random1, random2]
 }
 
 function shuffleNumbers(num1, num2, num3) {
     const arr = [num1, num2, num3]
-    for (let i = arr.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]]
+    for (let i = 0; i < 5; i++) {
+        let j = Math.floor(Math.random() * 3)
+        let elemToShift = arr.splice(j, 1)
+        arr.push(...elemToShift)
     }
     return arr
 }
