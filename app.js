@@ -38,10 +38,6 @@ app.get('/', checkAuth, async (req, res) => {
     res.render('index.ejs', { user })
 })
 
-app.get('/t', (req, res) => {
-    res.render('inde.ejs')
-})
-
 app.get('/register', checkNotAuth, (req, res) => {
     res.render('register.ejs')
 })

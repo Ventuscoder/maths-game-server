@@ -1,4 +1,16 @@
-<h1>Hi <%= user.username %></h1>
-<form action="/logout" method="GET">
-  <button type="submit">Log Out</button>
+<%- include('header', {title: 'Profile'}) -%>
+<h2>Hi <%= user.username %> </h2>
+<h3>Your current point total is <%= user.totalPoints %></h3>
+<form action="/save" method="post">
+    <label for="points">Points accumulated today:</label>
+    <input type="number" class='points-input' name="points" value=0 readonly>
+    <br>
+    <input type="submit" value="Save today's progress">
 </form>
+<button class="points-btn">Solve math sums to increase your points</button>
+<p>Note: your points will be increased based on the amount of time you took to solve a certain problem and how hard the problem is</p>
+<p>Your progress won't be saved if you leave this tab without saving!</p>
+<form action="/logout" method="GET">
+    <button type="submit">Log Out</button>
+</form>
+<%- include('footer') -%>

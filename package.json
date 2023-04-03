@@ -1,7 +1,7 @@
 {
-  "name": "press-game-server",
+  "name": "maths-game-server",
   "version": "1.0.0",
-  "description": "A game where you get points and get global ranking based on your button clicks",
+  "description": "A game where you get points for solving maths problems",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
