@@ -1,3 +1,5 @@
+let result
+
 $('.ask-btn').click(() => {
     let firstNum, secondNum
     firstNum = Math.floor(Math.random() * 20) + 1
@@ -5,7 +7,7 @@ $('.ask-btn').click(() => {
     $('.first-num').text(firstNum)
     $('.last-num').text(secondNum)
     let randomNum = Math.floor(Math.random() * 20) + 1
-    let oper, result
+    let oper
     if (randomNum % 2 == 0) {
         oper = '+'
         result = firstNum + secondNum
@@ -16,9 +18,13 @@ $('.ask-btn').click(() => {
     $('.operator').text(oper)
     let extraNum = generateNumbers(result)
     let shuffledNum = shuffleNumbers(result, extraNum[0], extraNum[1])
-    $('.b1').text(shuffledNum[0])
-    $('.b2').text(shuffledNum[1])
-    $('.b3').text(shuffledNum[2])
+    $('.btn-1').text(shuffledNum[0])
+    $('.btn-2').text(shuffledNum[1])
+    $('.btn-3').text(shuffledNum[2])
+})
+
+$('.btn').click(e=>{
+    console.log($('.btn-'+e.target.classList[1][4]).text())
 })
 
 function generateNumbers(num) {
