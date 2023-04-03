@@ -23,6 +23,7 @@ const initializePassport = require('./passport-config')
 initializePassport(passport, getUserByUsername, getUserById)
 
 app.set('view-engine', 'ejs')
+app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.use(flash())
 app.use(session({
