@@ -29,7 +29,8 @@ app.use(flash())
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    maxAge: 86400
 }))
 app.use(passport.initialize())
 app.use(passport.session())
