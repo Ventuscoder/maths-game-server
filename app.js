@@ -36,6 +36,7 @@ app.use(passport.session())
 
 app.get('/', checkAuth, async (req, res) => {
     let user = await req.user
+    console.log(user)
     res.render('index.ejs', { user })
 })
 
@@ -70,8 +71,12 @@ app.get('/logout', (req, res) => {
     res.redirect('/login')
 })
 
-app.post('/save', (req, res) => {
-    console.log(req.body.points)
+app.post('/save', async (req, res) => {
+    let currentUser = await req.user
+    currentUser.totalPoints += Number(req.body.points)
+    let updatedUser = await User.findOneAndUpdate({_id: currentUser._id}, currentUser)
+    req.user = updatedUser
+    res.redirect('/')
 })
 
 function checkAuth(req, res, next) {
