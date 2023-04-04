@@ -36,7 +36,6 @@ app.use(passport.session())
 
 app.get('/', checkAuth, async (req, res) => {
     let user = await req.user
-    console.log(user)
     res.render('index.ejs', { user })
 })
 
