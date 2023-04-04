@@ -1,4 +1,4 @@
-let result
+let result, timer, remainingTime
 
 $('.ask-btn').click(() => {
     let firstNum, secondNum
@@ -21,10 +21,28 @@ $('.ask-btn').click(() => {
     $('.btn-1').text(shuffledNum[0])
     $('.btn-2').text(shuffledNum[1])
     $('.btn-3').text(shuffledNum[2])
+    let endTime = new Date().getTime() + 5000
+    timer = setInterval(()=>{
+        let now = new Date().getTime()
+        remainingTime = endTime-now
+        $('.time-left').text((remainingTime-(remainingTime%10))/1000)
+        console.log('remaining time', remainingTime)
+        if (remainingTime <= 0) {
+            $('.time-status').text('Time up! ')
+            clearInterval(timer)
+        }
+    }, 1)
 })
 
 $('.btn').click(e=>{
-    console.log($('.btn-'+e.target.classList[1][4]).text())
+    let ans = $('.btn-'+e.target.classList[1][4]).text()
+    if (ans == result) {
+        console.log('correct answer')
+        $('.points-input').attr('value',Number($('.points-input').attr('value'))+Math.round(remainingTime/1000)+1)
+    } else {
+        console.log('wrong answer')
+    }
+    clearInterval(timer)
 })
 
 function generateNumbers(num) {

@@ -70,6 +70,10 @@ app.get('/logout', (req, res) => {
     res.redirect('/login')
 })
 
+app.post('/save', (req, res) => {
+    console.log(req.body.points)
+})
+
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
