@@ -1,11 +1,11 @@
 <%- include('header', {title: 'Profile'}) -%>
 <div class="profile-section">
-    <h2>Hi <%= user.username %> </h2>
+    <h2>√ Hi <%= user.username %> </h2>
     <h3>Your current point total is <%= user.totalPoints %></h3>
     <h3><a href="/game">👉🏻 Head over to play the game</a></h3>
-    <h3>Your favorites: </h3>
+    <h3>Take a screenshot and share your points with your friends!</h3>
     <form action="/logout" method="GET">
-        <button type="submit">Log Out</button>
+        <button type="submit" class="log-out">Log Out</button>
     </form>
 </div>
 <%- include('footer') -%>

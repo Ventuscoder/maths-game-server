@@ -71,7 +71,7 @@ a {
 }
 
 .game-section h3 {
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .question {
@@ -128,7 +128,7 @@ a {
     margin: 0 auto;
 }
 
-.profile-section button {
+.log-out {
     padding: 6px 20px;
     background-color: #2b2a2a;
     color: crimson;
