@@ -1,0 +1,28 @@
+<%- include('header', {title: 'Game'}) -%>
+<div class="game-section">
+    <h3><%= user.username %></h3>
+    <a href="/">👉🏻 Click to go to your profile</a>
+    <h3>Points:  <%= user.totalPoints %></h3>
+    <a href="/rules">👉🏻 Read the game rules here</a>
+    <div class="point-tracker">
+        <form action="/save" method="post">
+            <label for="points">Points accumulated today:</label>
+            <input type="number" class='points-input' name="points" value=0 readonly>
+            <br>
+            <button type="submit">Save today's progress</button>
+        </form>
+    </div>
+    <p class="question"><span class="first-num">0</span><span class="operator">+</span><span class="last-num">0</span></p>
+    <p><span class="time-status">Time left to solve: </span><span class="time-left">4.00</span> s</p>
+    <button class="btn btn-1">0</button>
+    <button class="btn btn-2">0</button>
+    <button class="btn btn-3">0</button>
+    <br>
+    <button class="ask-btn">Generate a maths question</button>
+    <p class="question-status">Attempt a question</p>
+    <br>
+    <form action="/logout" method="GET">
+        <button type="submit">Log Out</button>
+    </form>
+</div>
+<%- include('footer') -%>

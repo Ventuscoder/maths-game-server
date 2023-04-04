@@ -1,22 +1,10 @@
 <%- include('header', {title: 'Profile'}) -%>
-<h2>Hi <%= user.username %> </h2>
-<h3>Your current point total is <%= user.totalPoints %></h3>
-<form action="/save" method="post">
-    <label for="points">Points accumulated today:</label>
-    <input type="number" class='points-input' name="points" value=0 readonly>
-    <br>
-    <input type="submit" value="Save today's progress">
-</form>
-<p>Note: your points will be increased based on the amount of time you took to solve a certain problem and decreased if you get them wrong or if you click the question generator button again and again</p>
-<p>Don't forget to save your point total for today before leaving the page!</p>
-<p><span class="first-num">0</span><span class="operator">+</span><span class="last-num">0</span></p>
-<button class="btn btn-1">0</button><button class="btn btn-2">0</button><button class="btn btn-3">0</button>
-<br>
-<button class="ask-btn">Generate a maths question</button>
-<p><span class="time-status">Time left to solve: </span><span class="time-left">4.00</span> s</p>
-<p class="question-status">Attempt a question</p>
-<br>
-<form action="/logout" method="GET">
-    <button type="submit">Log Out</button>
-</form>
+<div class="profile-section">
+    <h2>Hi <%= user.username %> </h2>
+    <h3>Your current point total is <%= user.totalPoints %></h3>
+    <h3>Your favorites: </h3>
+    <form action="/logout" method="GET">
+        <button type="submit">Log Out</button>
+    </form>
+</div>
 <%- include('footer') -%>

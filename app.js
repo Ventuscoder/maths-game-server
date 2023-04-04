@@ -71,12 +71,21 @@ app.get('/logout', (req, res) => {
     res.redirect('/login')
 })
 
-app.post('/save', async (req, res) => {
+app.post('/save', checkAuth, async (req, res) => {
     let currentUser = await req.user
     currentUser.totalPoints += Number(req.body.points)
     let updatedUser = await User.findOneAndUpdate({_id: currentUser._id}, currentUser)
     req.user = updatedUser
     res.redirect('/')
+})
+
+app.get('/game', checkAuth, async (req, res) => {
+    let user = await req.user
+    res.render('game.ejs', { user })
+})
+
+app.get('/rules', checkAuth, async (req, res) => {
+    res.render('rules.ejs')
 })
 
 function checkAuth(req, res, next) {
