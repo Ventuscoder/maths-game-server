@@ -3,6 +3,7 @@
 * {
     font-family: 'PT Sans', sans-serif;
     color: #189ae4;
+    font-weight: 700;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 /* Styling title section */
 
 .title {
-    width: 80%;
+    width: 90%;
     margin: 20px auto 10px;
     font-size: 2.5rem;
 }
@@ -22,7 +23,7 @@ body {
 
 .auth-form {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     font-weight: 700;
 }
 
@@ -34,7 +35,6 @@ body {
 .auth-form button {
     margin: 10px 0 25px;
     padding: 6px 20px;
-    font-weight: 700;
     background-color: #2b2a2a;
     border: 3px solid #189ae4;
 }
@@ -43,14 +43,13 @@ body {
     padding: 5px 10px;
     margin: 20px 0;
     color: black;
-    font-weight: 700;
 }
 
 /* Styling footer */
 
 footer {
     margin: 40px auto;
-    width: 80%;
+    width: 90%;
 }
 
 footer a {
