@@ -1,0 +1,72 @@
+/* Universal styling */
+
+* {
+    font-family: 'PT Sans', sans-serif;
+    color: #189ae4;
+}
+
+body {
+    margin: 0px;
+    background-color: #2b2a2a;
+}
+
+/* Styling title section */
+
+.title {
+    width: 80%;
+    margin: 20px auto 10px;
+    font-size: 2.5rem;
+}
+
+/* Styling login and register forms */
+
+.auth-form {
+    margin: 0 auto;
+    width: 80%;
+    font-weight: 700;
+}
+
+.auth-form h1 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.auth-form button {
+    margin: 10px 0 25px;
+    padding: 6px 20px;
+    font-weight: 700;
+    background-color: #2b2a2a;
+    border: 3px solid #189ae4;
+}
+
+.auth-form input {
+    padding: 5px 10px;
+    margin: 20px 0;
+    color: black;
+    font-weight: 700;
+}
+
+/* Styling footer */
+
+footer {
+    margin: 40px auto;
+    width: 80%;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+@media (max-width: 400px) {
+    .title-icon {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .auth-form h1 {
+        font-size: 1.25rem;
+    }
+}
