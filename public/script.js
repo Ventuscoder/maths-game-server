@@ -9,8 +9,8 @@ $('.ask-btn').click(() => {
         clearInterval(timer)
     } else {
         let firstNum, secondNum
-        firstNum = Math.floor(Math.random() * 20) + 1
-        secondNum = Math.floor(Math.random() * 20) + 1
+        firstNum = Math.floor(Math.random() * 30) + 1
+        secondNum = Math.floor(Math.random() * 30) + 1
         $('.first-num').text(firstNum)
         $('.last-num').text(secondNum)
         let randomNum = Math.floor(Math.random() * 20) + 1
@@ -51,7 +51,7 @@ $('.btn').click(e=>{
     let ans = $('.btn-'+e.target.classList[1][4]).text()
     if (ans == result) {
         console.log('correct answer')
-        $('.points-input').attr('value', Number($('.points-input').attr('value'))+Math.round(remainingTime/1000)+1)
+        $('.points-input').attr('value', Number($('.points-input').attr('value'))+Math.floor(remainingTime/1000)+1)
         $('.question-status').text('Correct answer! Your point total for today has been increased')
     } else {
         console.log('wrong answer')

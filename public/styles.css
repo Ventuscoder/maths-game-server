@@ -19,8 +19,18 @@ body {
     font-size: 2.5rem;
 }
 
+h3 {
+    margin-left: none;
+}
+
+button {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
+    color: #008800;
+    cursor: pointer;
 }
 
 /* Styling login and register forms */
@@ -118,12 +128,20 @@ a {
     margin: 0 auto;
 }
 
+.profile-section button {
+    padding: 6px 20px;
+    background-color: #2b2a2a;
+    color: crimson;
+    border: 3px solid crimson;
+    margin-top: 50px;
+}
+
 /* Styling footer */
 
 footer {
     margin: 40px auto;
     width: 90%;
-    font-size: 1.25rem;
+    font-size: 1.25rem;   
 }
 
 @media (max-width: 400px) {
