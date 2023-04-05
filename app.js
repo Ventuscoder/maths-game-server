@@ -22,7 +22,7 @@ async function getUserById(user) {
 const initializePassport = require('./passport-config')
 initializePassport(passport, getUserByUsername, getUserById)
 
-app.set('view-engine', 'ejs')
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.use(flash())
@@ -37,11 +37,11 @@ app.use(passport.session())
 
 app.get('/', checkAuth, async (req, res) => {
     let user = await req.user
-    res.render('index.ejs', { user })
+    res.render('index', { user })
 })
 
 app.get('/register', checkNotAuth, (req, res) => {
-    res.render('register.ejs')
+    res.render('register')
 })
 
 app.post('/register', checkNotAuth, async (req, res) => {
@@ -57,7 +57,7 @@ app.post('/register', checkNotAuth, async (req, res) => {
 })
 
 app.get('/login', checkNotAuth, (req, res) => {
-    res.render('login.ejs')
+    res.render('login')
 })
 
 app.post('/login', checkNotAuth, passport.authenticate('local', {
@@ -81,7 +81,7 @@ app.post('/save', checkAuth, async (req, res) => {
 
 app.get('/game', checkAuth, async (req, res) => {
     let user = await req.user
-    res.render('game.ejs', { user })
+    res.render('game', { user })
 })
 
 app.get('/rules', checkAuth, async (req, res) => {
