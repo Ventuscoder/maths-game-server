@@ -79,7 +79,7 @@ a {
 }
 
 .question-status {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .btn {
@@ -143,12 +143,13 @@ a {
 /* Styling footer */
 
 footer {
-    margin: 40px auto;
+    margin: 20px auto;
     width: 90%;
     font-size: 1.25rem;   
 }
 
 @media (max-width: 400px) {
+
     .title-icon {
         font-size: 2rem;
     }
